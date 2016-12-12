@@ -1,0 +1,38 @@
+<html>
+	<head>
+        <title>My First Forum</title>	
+	</head>
+	
+	<body>
+		<a href="http://192.168.0.5:8080/forum/posts2/" 
+	       style="font-size:3em;font-weight:bold;text-align:center;">
+		    	Back To All Posts</a>	
+        <h1>{{ post.title }}</h1>
+        <br>
+        <p>{{ post.body }}</p>
+        <br><br>
+        <i>{{ post.user.nick }}</i>
+        <br>
+        <i>{{ post.date_create }}</i>
+        <br><hr><hr>
+        <ul>
+            {% for comment in comments%}
+                <li>
+        			<p>{{ comment.user.nick }}</p>
+                    <p>{{ comment.date_create }}</p>
+        			<p>{{ comment.comment }}</p>
+        		</li>
+        	{% endfor %}
+        </ul>
+        <br><br>
+        <p>Ввести комментарий</p>
+		<form  method="post">
+			{% csrf_token %}
+			<p style="color:#f00;display:{{ nm_wrn }};">Please insert avalible nickname</p>
+			<input type="text" name="n_name" value="name"/><br><br>
+			<textarea name="com_text" rows=5 cols=25>Comment...</textarea><br>
+			<input type="hidden" name="pst_id" value="{{post.id}}"/><br>
+			<input type="submit" value="Save" />
+		</form>
+     </body>
+</html>

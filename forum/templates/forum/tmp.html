@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		  <script>
+  function myFunction4() {
+      var x = document.getElementById("myColor").value;
+      document.getElementById("demo").innerHTML = x;
+      document.getElementById("bb").style='background-color:x;';
+  }
+  function myFunction3() {
+     var x = document.createElement("INPUT");
+     x.setAttribute("type", "color");
+     document.body.appendChild(x);
+  }
+  function myFunction2() {
+     var x = document.getElementById("demo");
+     x.style = "background-color:powderblue;font-size:80%;font-family:courier;color:red";
+     var y = document.getElementById("bb");
+     y.style = "background-color:red";    
+  }
+  function myFunction() {
+     var x = document.forms['mm']['aa'].value;
+     document.getElementById('aa').innerHTML = "ssssssssssss";
+  }
+    function ass(){
+     var x = document.forms["mm"]["aa"].value;
+       document.getElementById('aa').style = "text-align:center;";
+						    }
+  </script>
+		</head>
+
+  <body style="background-color:#ff0" id="aa">
+				<form action=ass() name="mm" id="nn">
+	  <input type="submit">
+    </form>
+    <input type="color" id="bb" value="#ffffff"><br>
+    <hr>
+    <form action="demo_form.asp">
+      <input type="color" id="bb" value="#ffffff"><br>
+      <input type="number" name="quantity" min="1" max="5">
+      <input type="submit">
+    </form>
+    <button onclick="ass()"> n on the light</button>
+	<button onclick="document.getElementById('qq').innerHTML = document.forms['nn']['aa'].value;"> TEST</button>
+	<p id="qq"></p>
+	<hr>
+	<button type="button" onclick="myFunction()">Try it</button>
+	</body>
+</html>
+

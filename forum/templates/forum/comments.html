@@ -1,0 +1,11 @@
+<h1>Comment list</h2>
+  <ul>
+  {% for comm in ForumComment %}
+  <li>
+		  <hr width="30%" align="left">
+		  <p>{{ comm.user.nick }}</p>
+		  <p>{{ comm.date_create }}</p><br>
+		  <p>{{ comm.comment }}</p>
+  </li>
+  {% endfor %}
+  </ul>

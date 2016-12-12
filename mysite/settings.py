@@ -19,6 +19,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'forum.apps.ForumConfig',
     'polls.apps.PollsConfig',
     'diary.apps.DiaryConfig',
     'django.contrib.admin',
@@ -63,7 +64,12 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
+#DATABASE_ROUTERS = ['polls.apps.PollsRouter','diary.apps.DiaryRouter',]
+DATABASE_ROUTERS = ['diary.apps.DiaryRouter','forum.apps.ForumRouter']
+
 DATABASES = {
+        # 'default':{},
+           # 'polls_db':{
             'default':{
                 'ENGINE':'django.db.backends.postgresql',
                 'NAME':'polls_db',
@@ -72,10 +78,23 @@ DATABASES = {
                 'HOST':'127.0.0.1',
                 'PORT':'5432'
     },
-#    'mysqlite': {
-#        'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#    },
+            'diary_db':{
+                'ENGINE':'django.db.backends.postgresql',
+                'NAME':'diary_db',
+                'USER':'axe',
+                'PASSWORD':'222',
+                'HOST':'127.0.0.1',
+                'PORT':'5432'
+    },
+            'forum_db':{
+                'ENGINE':'django.db.backends.postgresql',
+                'NAME':'forum_db',
+                'USER':'axe',
+                'PASSWORD':'222',
+                'HOST':'127.0.0.1',
+                'PORT':'5432'
+    },
+
 }
 
 

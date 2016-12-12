@@ -1,0 +1,27 @@
+
+<html>
+  <head>
+    <title>ForumPaje</title>
+	<script>
+      function chcol(){
+	      var x = document.forms['color_form']['col'].value;
+          document.getElementById('main_back').style = "background-color:"+x;
+          document.getElementById('tst').innerHTML = x;
+	  }
+    </script>
+  </head>
+
+
+  <body id="main_back">
+		  <a href="http://192.168.0.5:8080/forum/posts2">Posts`gt</a><br>
+		  <a href="http://192.168.0.5:8080/forum/start">Start</a>
+
+
+    <form name="color_form">
+	  <input type="color" id="col">
+	</form>
+	<br>
+    <button onclick="chcol()"> ChangeColor:w</button>
+    <p id="tst"></p>
+  </body>
+</html>
